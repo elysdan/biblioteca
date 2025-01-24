@@ -1,5 +1,7 @@
 <?php
 
+include('app/config/config.php');
+include('app/config/conn.php');
 
 ?>
 
@@ -15,16 +17,16 @@
 
   <!-- css -->
   <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
-  <link href="css/bootstrap.css" rel="stylesheet" />
-  <link href="css/bootstrap-responsive.css" rel="stylesheet" />
-  <link href="css/flexslider.css" rel="stylesheet" />
-  <link href="css/prettyPhoto.css" rel="stylesheet" />
-  <link href="css/camera.css" rel="stylesheet" />
-  <link href="css/jquery.bxslider.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="<?=$URL;?>/app/templates/Eterna/css/bootstrap.css" rel="stylesheet" />
+  <link href="<?=$URL;?>/app/templates/Eterna/css/bootstrap-responsive.css" rel="stylesheet" />
+  <link href="<?=$URL;?>/app/templates/Eterna/css/flexslider.css" rel="stylesheet" />
+  <link href="<?=$URL;?>/app/templates/Eterna/css/prettyPhoto.css" rel="stylesheet" />
+  <link href="<?=$URL;?>/app/templates/Eterna/css/camera.css" rel="stylesheet" />
+  <link href="<?=$URL;?>/app/templates/Eterna/css/jquery.bxslider.css" rel="stylesheet" />
+  <link href="<?=$URL;?>/app/templates/Eterna/css/style.css" rel="stylesheet" />
 
   <!-- Theme skin -->
-  <link href="color/default.css" rel="stylesheet" />
+  <link href="<?=$URL;?>/app/templates/Eterna/color/default.css" rel="stylesheet" />
 
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
@@ -74,7 +76,7 @@
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
-              <a href="index.html"><img src="img/logo.png" alt="" /></a>
+              <a href="index.html"><img src="<?=$URL;?>/app/templates/Eterna/img/logo.png" alt="" /></a>
             </div>
           </div>
           <div class="span8">
@@ -85,10 +87,10 @@
                     <li class="dropdown active">
                       <a href="index.html"><i class="icon-home"></i> Home <i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="index-alt2.html">Homepage 2</a></li>
-                        <li><a href="index-alt3.html">Homepage 3</a></li>
-                        <li><a href="index-alt4.html">Parallax slider</a></li>
-                        <li><a href="index-landingpage.html">Landing page</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/index-alt2.html">Homepage 2</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/index-alt3.html">Homepage 3</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/index-alt4.html">Parallax slider</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/index-landingpage.html">Landing page</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
@@ -100,8 +102,8 @@
                         <li><a href="icon-variations.html">Icon variations</a></li>
                         <li class="dropdown"><a href="#">3rd menus<i class="icon-angle-right"></i></a>
                           <ul class="dropdown-menu sub-menu-level1">
-                            <li><a href="index.html">Sub menu</a></li>
-                            <li><a href="index.html">Sub menu</a></li>
+                            <li><a href="<?=$URL;?>/app/templates/Eterna/index.html">Sub menu</a></li>
+                            <li><a href="<?=$URL;?>/app/templates/Eterna/index.html">Sub menu</a></li>
                           </ul>
                         </li>
                       </ul>
@@ -109,35 +111,35 @@
                     <li class="dropdown">
                       <a href="#">Pages <i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="pricingbox.html">Pricing boxes</a></li>
-                        <li><a href="404.html">404</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/about.html">About us</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/faq.html">FAQ</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/team.html">Team</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/services.html">Services</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/pricingbox.html">Pricing boxes</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/404.html">404</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
                       <a href="#">Portfolio <i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                        <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                        <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                        <li><a href="portfolio-detail.html">Portfolio detail</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/portfolio-2cols.html">Portfolio 2 columns</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/portfolio-3cols.html">Portfolio 3 columns</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/portfolio-4cols.html">Portfolio 4 columns</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/portfolio-detail.html">Portfolio detail</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
                       <a href="#">Blog <i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                        <li><a href="blog-fullwidth.html">Blog fullwidth</a></li>
-                        <li><a href="post-left-sidebar.html">Post left sidebar</a></li>
-                        <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/blog-left-sidebar.html">Blog left sidebar</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/blog-right-sidebar.html">Blog right sidebar</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/blog-fullwidth.html">Blog fullwidth</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/post-left-sidebar.html">Post left sidebar</a></li>
+                        <li><a href="<?=$URL;?>/app/templates/Eterna/post-right-sidebar.html">Post right sidebar</a></li>
                       </ul>
                     </li>
                     <li>
-                      <a href="contact.html">Contact </a>
+                      <a href="<?=$URL;?>/app/templates/Eterna/contact.html">Contact </a>
                     </li>
                   </ul>
                 </nav>
@@ -158,7 +160,7 @@
       <div class="camera_wrap" id="camera-slide">
 
         <!-- slide 1 here -->
-        <div data-src="img/slides/camera/slide1/img1.jpg">
+        <div data-src="<?=$URL;?>/app/templates/Eterna/img/slides/camera/slide1/img1.jpg">
           <div class="camera_caption fadeFromLeft">
             <div class="container">
               <div class="row">
@@ -173,7 +175,7 @@
 										</a>
                 </div>
                 <div class="span6">
-                  <img src="img/slides/camera/slide1/screen.png" alt="" class="animated bounceInDown delay1" />
+                  <img src="<?=$URL;?>/app/templates/Eterna/img/slides/camera/slide1/screen.png" alt="" class="animated bounceInDown delay1" />
                 </div>
               </div>
             </div>
@@ -181,12 +183,12 @@
         </div>
 
         <!-- slide 2 here -->
-        <div data-src="img/slides/camera/slide2/img1.jpg">
+        <div data-src="<?=$URL;?>/app/templates/Eterna/img/slides/camera/slide2/img1.jpg">
           <div class="camera_caption fadeFromLeft">
             <div class="container">
               <div class="row">
                 <div class="span6">
-                  <img src="img/slides/camera/slide2/iMac.png" alt="" />
+                  <img src="<?=$URL;?>/app/templates/Eterna/img/slides/camera/slide2/iMac.png" alt="" />
                 </div>
                 <div class="span6">
                   <h2 class="animated fadeInDown"><strong>Put your <span class="colored">Opt in form</span></strong></h2>
@@ -205,14 +207,14 @@
         </div>
 
         <!-- slide 3 here -->
-        <div data-src="img/slides/camera/slide2/img1.jpg">
+        <div data-src="<?=$URL;?>/app/templates/Eterna/img/slides/camera/slide2/img1.jpg">
           <div class="camera_caption fadeFromLeft">
             <div class="container">
               <div class="row">
                 <div class="span12 aligncenter">
                   <h2 class="animated fadeInDown"><strong><span class="colored">Responsive</span> and <span class="colored">cross broswer</span> compatibility</strong></h2>
                   <p class="animated fadeInUp">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                  <img src="img/slides/camera/slide3/browsers.png" alt="" class="animated bounceInDown delay1" />
+                  <img src="<?=$URL;?>/app/templates/Eterna/img/slides/camera/slide3/browsers.png" alt="" class="animated bounceInDown delay1" />
                 </div>
               </div>
             </div>
@@ -414,7 +416,7 @@
                   feugiat
                 </blockquote>
                 <div class="testimonial-autor">
-                  <img src="img/dummies/testimonial/1.png" alt="" />
+                  <img src="<?=$URL;?>/app/templates/Eterna/img/dummies/testimonial/1.png" alt="" />
                   <h4>Hillary Doe</h4>
                   <a href="#">www.companyname.com</a>
                 </div>
@@ -425,7 +427,7 @@
                   feugiat
                 </blockquote>
                 <div class="testimonial-autor">
-                  <img src="img/dummies/testimonial/2.png" alt="" />
+                  <img src="<?=$URL;?>/app/templates/Eterna/img/dummies/testimonial/2.png" alt="" />
                   <h4>Michael Doe</h4>
                   <a href="#">www.companyname.com</a>
                 </div>
@@ -436,7 +438,7 @@
                   feugiat
                 </blockquote>
                 <div class="testimonial-autor">
-                  <img src="img/dummies/testimonial/3.png" alt="" />
+                  <img src="<?=$URL;?>/app/templates/Eterna/img/dummies/testimonial/3.png" alt="" />
                   <h4>Mark Donovan</h4>
                   <a href="#">www.companyname.com</a>
                 </div>
@@ -447,7 +449,7 @@
                   feugiat
                 </blockquote>
                 <div class="testimonial-autor">
-                  <img src="img/dummies/testimonial/4.png" alt="" />
+                  <img src="<?=$URL;?>/app/templates/Eterna/img/dummies/testimonial/4.png" alt="" />
                   <h4>Marry Doe Elliot</h4>
                   <a href="#">www.companyname.com</a>
                 </div>
@@ -472,11 +474,11 @@
                 <div class="span3">
                   <div class="item">
                     <figure>
-                      <div><img src="img/dummies/works/1.jpg" alt="" /></div>
+                      <div><img src="<?=$URL;?>/app/templates/Eterna/img/dummies/works/1.jpg" alt="" /></div>
                       <figcaption>
                         <div>
                           <span>
-								<a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
+								<a href="<?=$URL;?>/app/templates/Eterna/img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
 								</span>
                           <span>
 								<a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
@@ -489,11 +491,11 @@
                 <div class="span3">
                   <div class="item">
                     <figure>
-                      <div><img src="img/dummies/works/2.jpg" alt="" /></div>
+                      <div><img src="<?=$URL;?>/app/templates/Eterna/img/dummies/works/2.jpg" alt="" /></div>
                       <figcaption>
                         <div>
                           <span>
-								<a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
+								<a href="<?=$URL;?>/app/templates/Eterna/img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
 								</span>
                           <span>
 								<a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
@@ -506,11 +508,11 @@
                 <div class="span3">
                   <div class="item">
                     <figure>
-                      <div><img src="img/dummies/works/3.jpg" alt="" /></div>
+                      <div><img src="<?=$URL;?>/app/templates/Eterna/img/dummies/works/3.jpg" alt="" /></div>
                       <figcaption>
                         <div>
                           <span>
-								<a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
+								<a href="<?=$URL;?>/app/templates/Eterna/img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
 								</span>
                           <span>
 								<a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
@@ -523,11 +525,11 @@
                 <div class="span3">
                   <div class="item">
                     <figure>
-                      <div><img src="img/dummies/works/4.jpg" alt="" /></div>
+                      <div><img src="<?=$URL;?>/app/templates/Eterna/img/dummies/works/4.jpg" alt="" /></div>
                       <figcaption>
                         <div>
                           <span>
-								<a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
+								<a href="<?=$URL;?>/app/templates/Eterna/img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
 								</span>
                           <span>
 								<a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
@@ -623,27 +625,27 @@
   <!-- javascript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="js/jquery.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/jquery.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/jquery.easing.1.3.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/bootstrap.js"></script>
 
-  <script src="js/modernizr.custom.js"></script>
-  <script src="js/toucheffects.js"></script>
-  <script src="js/google-code-prettify/prettify.js"></script>
-  <script src="js/jquery.bxslider.min.js"></script>
-  <script src="js/camera/camera.js"></script>
-  <script src="js/camera/setting.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/modernizr.custom.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/toucheffects.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/google-code-prettify/prettify.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/jquery.bxslider.min.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/camera/camera.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/camera/setting.js"></script>
 
-  <script src="js/jquery.prettyPhoto.js"></script>
-  <script src="js/portfolio/jquery.quicksand.js"></script>
-  <script src="js/portfolio/setting.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/jquery.prettyPhoto.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/portfolio/jquery.quicksand.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/portfolio/setting.js"></script>
 
-  <script src="js/jquery.flexslider.js"></script>
-  <script src="js/animate.js"></script>
-  <script src="js/inview.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/jquery.flexslider.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/animate.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/inview.js"></script>
 
   <!-- Template Custom JavaScript File -->
-  <script src="js/custom.js"></script>
+  <script src="<?=$URL;?>/app/templates/Eterna/js/custom.js"></script>
 
 </body>
 </html>
