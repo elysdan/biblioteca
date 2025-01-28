@@ -6,7 +6,7 @@
 if(pg_pconnect('host=' . PGHOST . ' port=' . PGPORT . ' dbname=' . PGDATABASE . ' user=' . PGUSER . ' password=' . PGPASSWORD) || 
    pg_pconnect('host=' . PGHOST_B . ' port=' . PGPORT_B . ' dbname=' . PGDATABASE_B . ' user=' . PGUSER_B . ' password=' . PGPASSWORD_B)){
    
-    echo "<script> alert('conectado');</script>";
+    //echo "<script> alert('conectado');</script>";
 
 }else{
    //echo ERROR_ON_CONNECT_FAILED;
