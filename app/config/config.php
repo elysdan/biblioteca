@@ -36,5 +36,8 @@ define('PGCLIENTENCODING_C','UNICODE');
 define('ERROR_ON_CONNECT_FAILED_C','No se pudo conectar a la base de datos neon.');
 */
 
-$URL = 'http://localhost/biblioteca'
+$URL = 'http://localhost/biblioteca';
+
+//echo 'entro al config';
+//echo $URL;
 ?>
