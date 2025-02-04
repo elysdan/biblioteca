@@ -2,6 +2,7 @@
 include('../../debug/errores.php');
 include('../../app/config/config.php');
 include('../../app/config/conn.php');
+include('../../app/controllers/loginController.php');
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +34,7 @@ include('../../app/config/conn.php');
                 <p class="login-box-msg">Inicia sesion</p>
 
                 <div class="alert alert-danger">
-                    Error en los datos!
+                    Error!
                 </div>
 
                 <form action="<?=$URL;?>/app/controllers/loginController.php" method="post">
