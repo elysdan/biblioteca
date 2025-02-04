@@ -1,6 +1,7 @@
 <?php
-include('../app/config/config.php');
-include('../app/config/conn.php');
+include('../../debug/errores.php');
+include('../../app/config/config.php');
+include('../../app/config/conn.php');
 ?>
 
 <!DOCTYPE html>
@@ -14,11 +15,11 @@ include('../app/config/conn.php');
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?= $URL; ?>/public/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?=$URL;?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="<?= $URL; ?>/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="<?=$URL;?>/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?= $URL; ?>/public/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?=$URL;?>/public/dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition login-page">
@@ -31,7 +32,11 @@ include('../app/config/conn.php');
             <div class="card-body">
                 <p class="login-box-msg">Inicia sesion</p>
 
-                <form action="<?= $URL;?>/app/controllers/loginController.php" method="post">
+                <div class="alert alert-danger">
+                    Error en los datos!
+                </div>
+
+                <form action="<?=$URL;?>/app/controllers/loginController.php" method="post">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" name="correo" placeholder="Correo">
                         <div class="input-group-append">
@@ -69,11 +74,11 @@ include('../app/config/conn.php');
     <!-- /.login-box -->
 
     <!-- jQuery -->
-    <script src="<?= $URL; ?>/public/plugins/jquery/jquery.min.js"></script>
+    <script src="<?=$URL;?>/public/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="<?= $URL; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=$URL;?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="<?= $URL; ?>/public/dist/js/adminlte.min.js"></script>
+    <script src="<?=$URL;?>/public/dist/js/adminlte.min.js"></script>
 </body>
 
 </html>
