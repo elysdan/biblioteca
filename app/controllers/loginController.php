@@ -3,12 +3,10 @@
 //include('../../debug/errores.php');
 include('../config/config.php');
 include('../config/conn.php');
-
 //echo password_hash('qwerty', PASSWORD_DEFAULT);
 //die();
 
 try {
-
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //Para obtencion de errores de PDO
 
     $correo = $_POST['correo']; 
@@ -53,11 +51,9 @@ try {
                 //echo "Contrasena incorrecta";
             }
         }     
-
 } catch (PDOException $e) {
     echo "Error de base de datos: " . $e->getMessage();
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-
 ?>
