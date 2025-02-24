@@ -10,13 +10,14 @@
 //DB LOCAL
 define('PGHOST','localhost');
 define('PGPORT',5432);
-define('PGDATABASE','biblioteca');
+define('PGDATABASE','library');
 define('PGUSER', 'postgres');
 define('PGPASSWORD', 'postgres');
 define('PGCLIENTENCODING','UNICODE');
 define('ERROR_ON_CONNECT_FAILED','No se pudo conectar a la base de datos local.');
 
 //DB NEON
+/*
 define('PGHOST_B','ep-fragrant-block-a4w7aqq6-pooler.us-east-1.aws.neon.tech');
 define('PGPORT_B',5432);
 define('PGDATABASE_B','library');
@@ -24,7 +25,7 @@ define('PGUSER_B', 'neondb_owner');
 define('PGPASSWORD_B', 'npg_G4tSPRTw0XEO');
 define('PGCLIENTENCODING_B','UNICODE');
 define('ERROR_ON_CONNECT_FAILED_B','No se pudo conectar a la base de datos neon.');
-
+*/
 //DB SUPABASE
 /*
 define('PGHOST_C','ep-fragrant-block-a4w7aqq6-pooler.us-east-1.aws.neon.tech');
@@ -37,7 +38,7 @@ define('ERROR_ON_CONNECT_FAILED_C','No se pudo conectar a la base de datos neon.
 */
 
 $URL = 'http://localhost/biblioteca';
-
+//$URL = 'http://129.1.7.58/biblioteca'
 //echo 'entro al config';
 //echo $URL;
 ?>

@@ -2,31 +2,7 @@
 include('../../app/config/config.php');
 include('../../app/config/conn.php');
 //include('../../debug/errores.php');
-
-session_start();
-if (isset($_SESSION['sesion_correo'])) {
-    //echo "OK";
-}else{
-    header("Location:".$URL."/login");
-}
-
-$correo_sesion = $_SESSION['sesion_correo'];
-$query_usuario = $pdo->prepare("SELECT * FROM tbl_usuarios WHERE correo = :correo AND estado = 1");
-$query_usuario->bindParam(':correo', $correo_sesion, PDO::PARAM_STR);
-$query_usuario->execute();
-
-$sesion_usuarios = $query_usuario->fetchAll(PDO::FETCH_ASSOC);
-
-foreach($sesion_usuarios as $su){
-    //var_dump($su);
-    $user_id = $su['id'];
-    $user_name = $su['nombre'];
-    $user_lastname = $su['apellido'];
-    $user_email = $su['correo'];
-    $user_passwd = $su['contrasena'];
-    $user_fechaNac = $su['fecha_nac'];
-    $user_estado = $su['estado'];
-}
+include('../../app/config/session.php');
 
 //echo $user_id;
 
@@ -41,26 +17,35 @@ foreach($sesion_usuarios as $su){
             <h1 class="m-0">Dashboard</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
-        <table class="table table-hover">
+        <div class="container mt-3">
+        <h2 class="mb-3">Datos Personales</h2>
+        <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
-                    <th>4</th>
-                    <th>5</th>
+                    <th scope="col">Dato</th>
+                    <th scope="col">Valor</th>
                 </tr>
             </thead>
             <tbody>
-<tr>
-    <th>1</th>
-    <td>a</td>
-    <td>b</td>
-    <td>c</td>
-    <td>d</td>
-</tr>
+                <tr>
+                    <th scope="row">NOMBRE</th>
+                    <td><?=$su['nombre'];?></td>
+                </tr>
+                <tr>
+                    <th scope="row">APELLIDO</th>
+                    <td><?=$su['apellido'];?></td>
+                </tr>
+                <tr>
+                    <th scope="row">FECHA NACIMIENTO</th>
+                    <td><?=$su['fecha_nac'];?></td>
+                </tr>
+                <tr>
+                    <th scope="row">ESTADO</th>
+                    <td><?=$su['estado'];?></td>
+                </tr>
             </tbody>
-            </table>
+        </table>
+    </div>
       </div><!-- /.container-fluid -->
     </div>
   </div>

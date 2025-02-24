@@ -1,5 +1,5 @@
 <?php
-include('../../debug/errores.php');
+//include('../../debug/errores.php');
 include('../../app/config/config.php');
 include('../../app/config/conn.php');
 include('../../app/controllers/loginController.php');

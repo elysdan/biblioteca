@@ -2,7 +2,7 @@
 
 include('app/config/config.php');
 include('app/config/conn.php');
-
+echo password_hash('qwerty', PASSWORD_DEFAULT);
 ?>
 
 <!DOCTYPE html>

@@ -3,6 +3,7 @@
 //echo ini_set("display_errors", 1);
 include('../../app/config/config.php');
 include('../../app/config/conn.php');
+include('../../app/config/session.php');
 ?>
 
 <?=include('primero.php');?>
