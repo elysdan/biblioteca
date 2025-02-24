@@ -18,3 +18,4 @@ if($pdo){
 }else{
    echo ERROR_ON_CONNECT_FAILED;
 }
+
