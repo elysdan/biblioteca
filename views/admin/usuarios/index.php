@@ -15,6 +15,14 @@ include('../../../app/config/session.php');
             <h1 class="m-0">Listado de usuarios</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
+
+        <div class="card">
+            <h5 class="card-header">Creacion de usuarios</h5>
+            <div class="card-body">
+
+            </div>
+        </div>
+
       </div><!-- /.container-fluid -->
     </div>
   </div>
