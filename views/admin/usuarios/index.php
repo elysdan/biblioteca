@@ -17,9 +17,29 @@ include('../../../app/config/session.php');
         </div><!-- /.row -->
 
         <div class="card">
-            <h5 class="card-header">Creacion de usuarios</h5>
+            <h5 class="card-header">Crear usuario</h5>
             <div class="card-body">
-
+            <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">F. Nacimiento</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><?=$su['nombre'];?></td>
+                    <td><?=$su['apellido'];?></td>
+                    <td><?=$su['correo'];?></td>
+                    <td><?=$su['fecha_nac'];?></td>
+                    <td><?=$su['estado'];?></td>
+                </tr>
+            </tbody>
+            </table>
             </div>
         </div>
 

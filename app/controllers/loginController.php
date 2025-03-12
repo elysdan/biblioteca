@@ -35,7 +35,7 @@ try {
             //die();
         }
 
-        if($contador == "0"){ // Verifica datos existentes
+        if($contador == "0" || $contador == NULL || $pass != $u['contrasena']){ // Verifica datos existentes
             header("Location:".$URL."/views/error/loginError.php");
             //echo "Los datos ingresados no pertenecen a un usuario Activo, por favor verifique nuevamente los datos ingresados";
         }else{

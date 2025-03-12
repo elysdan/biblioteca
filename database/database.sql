@@ -14,5 +14,5 @@ CREATE TABLE IF NOT EXISTS tbl_usuarios
     CONSTRAINT tbl_usuarios_pkey PRIMARY KEY (id)
 );
 
-insert into tbl_usuarios values(1,'Elys','Martinez','emartinez229@gmail.com','123456');
-insert into tbl_usuarios values(2,'Elys','Martinez','admin@admin.com','$2y$10$eMJjIJyQsw.KHEWwJ1Qs7.E081WF.iFQjunMZ.oUgzvXocj8TBJDm');
+insert into tbl_usuarios values(1,'Elys','Martinez','emartinez229@gmail.com','123456', 1);
+insert into tbl_usuarios values(2,'Elys','Martinez','admin@admin.com','$2y$10$eMJjIJyQsw.KHEWwJ1Qs7.E081WF.iFQjunMZ.oUgzvXocj8TBJDm', 1);

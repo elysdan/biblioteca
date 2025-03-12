@@ -19,7 +19,7 @@ include('../../../app/config/session.php');
         <div class="card">
             <h5 class="card-header">Creacion de usuarios</h5>
             <div class="card-body">
-              <form action="createUserController.php" method="post">
+              <form action="<?=$URL?>/app/controllers/createUserController.php" method="post">
 <!--Fila 1 -->
                 <div class="row">
 
@@ -49,7 +49,7 @@ include('../../../app/config/session.php');
 
                   <div class="col-md-4">
                     <div class="form-group">
-                      <select name="" id="" class="form-control">
+                      <select name="estado" id="" class="form-control">
                         <option value="1">ACTIVO</option>
                         <option value="0">INACTIVO</option>
                       </select>
@@ -62,25 +62,25 @@ include('../../../app/config/session.php');
 
                   <div class="col-md-3">
                     <div class="form-group">
-                      <input type="date" class="form-control" placeholder="Fecha de Nacimiento">
+                      <input type="date" name="fecha_nac" class="form-control" placeholder="Fecha de Nacimiento">
                     </div>
                   </div>
 
                   <div class="col-md-3">
                     <div class="form-group">
-                      <input type="email" class="form-control" placeholder="Correo">
+                      <input type="email" name="correo" class="form-control" placeholder="Correo">
                     </div>
                   </div>
 
                   <div class="col-md-3">
                     <div class="form-group">
-                      <input type="password" class="form-control" placeholder="Contraseña">
+                      <input type="password" name="contrasena" class="form-control" placeholder="Contraseña">
                     </div>
                   </div>
 
                   <div class="col-md-3">
                     <div class="form-group">
-                      <input type="password" class="form-control" placeholder="Validar Contraseña">
+                      <input type="password" name="verificar_contrasena" class="form-control" placeholder="Validar Contraseña">
                     </div>
                   </div>
 
@@ -88,9 +88,9 @@ include('../../../app/config/session.php');
 <hr>
                 <div class="row">
                   <div class="col-md-6">
-                    <a href="http://" class="btn btn-default">Cancelar</a>
+                    <a href="<?=$URL?>/views/admin" class="btn btn-default">Cancelar</a>
 
-                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <button type="submit" onclick="return confirm('¿Todos sus datos son correctos?');" class="btn btn-primary">Registrar</button>
                   </div>
                   </div>
                 </div>
