@@ -31,13 +31,27 @@ include('../../../app/config/session.php');
                 </tr>
             </thead>
             <tbody>
+              <?php
+                $query_usuarios = $pdo->prepare("SELECT * FROM tbl_usuarios");
+                $query_usuarios->execute();
+                $usuarios = $query_usuarios->fetchAll(PDO::FETCH_ASSOC);
+                foreach($usuarios as $us){
+                  $nombre = $us['nombre'];
+                  $apellido = $us['apellido'];
+                  $correo = $us['correo'];
+                  $fecha_nac = $us['fecha_nac'];
+                  $estado = $us['estado'];
+              ?>
                 <tr>
-                    <td><?=$su['nombre'];?></td>
-                    <td><?=$su['apellido'];?></td>
-                    <td><?=$su['correo'];?></td>
-                    <td><?=$su['fecha_nac'];?></td>
-                    <td><?=$su['estado'];?></td>
+                    <td><?=$us['nombre'];?></td>
+                    <td><?=$us['apellido'];?></td>
+                    <td><?=$us['correo'];?></td>
+                    <td><?=$us['fecha_nac'];?></td>
+                    <td><?=$us['estado'];?></td>
                 </tr>
+                <?php
+                }
+                ?>
             </tbody>
             </table>
             </div>
