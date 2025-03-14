@@ -12,6 +12,10 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=$URL;?>/public/dist/css/adminlte.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- jQuery -->
+  <script src="<?=$URL;?>/public/plugins/jquery/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+  <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

@@ -35,7 +35,13 @@ include('../../../app/config/session.php');
         <div class="card">
             <h5 class="card-header">Crear usuario</h5>
             <div class="card-body">
-            <table class="table table-striped">
+              <script>
+                $(document).ready( function(){
+                    $('#tabla1').DataTable();
+                  }
+                );
+              </script>
+            <table id="tabla1" class="table table-striped">
             <thead class="table-dark">
                 <tr>
                     <th scope="col">Nombre</th>
