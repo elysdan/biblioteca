@@ -28,22 +28,28 @@ if ($contrasena == $verificar_contrasena) {
     $sql->bindParam(':fecha_nac', $fecha_nac);
 
     if($sql->execute()){
-        echo'<script type="text/javascript">
+       /* echo'<script type="text/javascript">
         alert("Registro de Usuario Exitoso");
-        </script>';
-        header("Location: Formulario.php");
+        </script>';*/
+        header('Location:'.$URL.'/views/admin/usuarios/index.php');
+        session_start();
+        $_SESSION['msj'] = "Registro de Usuario Exitoso";
     }else{
-        echo'<script type="text/javascript">
+        /*echo'<script type="text/javascript">
         alert("Error en la conexion");
-        </script>';
-        header("Location: Formulario.php");
+        </script>';*/
+        header('Location:'.$URL.'/views/admin/usuarios/create.php');
+        session_start();
+        $_SESSION['msj'] = "Error en la conexion";
     };
 
 }else{
-    //header('Location:'.$URL.'/views/admin/usuarios/index.php');
+    /*header('Location:'.$URL.'/views/admin/usuarios/index.php');
     echo'<script type="text/javascript">
     alert("Contraseñas no son iguales");
-    </script>';
-    //header('Location:'.$URL.'/views/admin/usuarios/index.php');
+    </script>';*/
+    header('Location:'.$URL.'/views/admin/usuarios/create.php');
+    session_start();
+    $_SESSION['msj'] = "Contraseñas no son iguales";
    // window.location.href="index.php";
 }

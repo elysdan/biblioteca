@@ -13,6 +13,22 @@ include('../../../app/config/session.php');
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">Listado de usuarios</h1>
+
+          <?php
+            if (isset($_SESSION['msj'])) { 
+              $respuesta = $_SESSION['msj'];?>
+             <script>
+                 Swal.fire({
+                  title: "¡Excelente!",
+                  text: "<?=$respuesta?>",
+                  icon: "success"
+                });
+             </script> 
+          <?php 
+            unset($_SESSION['msj']);   
+            }
+          ?>
+
           </div><!-- /.col -->
         </div><!-- /.row -->
 
@@ -36,6 +52,7 @@ include('../../../app/config/session.php');
                 $query_usuarios->execute();
                 $usuarios = $query_usuarios->fetchAll(PDO::FETCH_ASSOC);
                 foreach($usuarios as $us){
+                  $id = $us['id'];
                   $nombre = $us['nombre'];
                   $apellido = $us['apellido'];
                   $correo = $us['correo'];
@@ -48,6 +65,11 @@ include('../../../app/config/session.php');
                     <td><?=$us['correo'];?></td>
                     <td><?=$us['fecha_nac'];?></td>
                     <td><?=$us['estado'];?></td>
+                    <td>
+                      <a href="<?=$URL?>/views/admin/usuarios/show.php?id=<?=$id?>" class="btn btn-success">Ver</a>
+                      <a href="<?=$URL?>/views/admin/usuarios/edit.php?id=<?=$id?>" class="btn btn-warning">Editar</a>
+                      <a href="<?=$URL?>/views/admin/usuarios/delete.php?id=<?=$id?>" class="btn btn-danger">Eliminar</a>
+                    </td>
                 </tr>
                 <?php
                 }
