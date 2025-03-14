@@ -31,6 +31,20 @@ $query_usuarios = $pdo->prepare("SELECT * FROM tbl_usuarios WHERE id = '$id_get'
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">Eliminar Usuario</h1>
+            <?php
+            if (isset($_SESSION['msj'])) { 
+              $respuesta = $_SESSION['msj'];?>
+             <script>
+                 Swal.fire({
+                  title: "¡Excelente!",
+                  text: "<?=$respuesta?>",
+                  icon: "success"
+                });
+             </script> 
+          <?php 
+            unset($_SESSION['msj']);   
+            }
+          ?>
           </div><!-- /.col -->
         </div><!-- /.row -->
 

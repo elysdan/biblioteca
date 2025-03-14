@@ -13,15 +13,13 @@ $sql = $pdo->prepare("UPDATE tbl_usuarios SET estado = '$estado_inactivo'
 
 
     if($sql->execute()){
-        echo'<script type="text/javascript">
-        alert("Usuario Inhabilitado");
-        </script>';
-        //header('Location:');
+        header('Location:'.$URL.'/views/admin/usuarios/index.php');
+        session_start();
+        $_SESSION['msj'] = "Usuario Inhabilitado";
     }else{
-        echo'<script type="text/javascript">
-        alert("Fallo al Inhabilitar Usuario");
-        </script>';
-        //header('Location:');
+        header('Location:'.$URL.'/views/admin/usuarios/index.php');
+        session_start();
+        $_SESSION['msj'] = "Fallo al Inhabilitar Usuario";
     }
 
 

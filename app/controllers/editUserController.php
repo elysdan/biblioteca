@@ -27,12 +27,12 @@ $sql = $pdo->prepare("UPDATE tbl_usuarios SET
     $sql->bindParam(':fecha_nac', $fecha_nac);
 
     if($sql->execute()){
-        echo'<script type="text/javascript">
-        alert("Actualizacion de Usuario Exitoso");
-        </script>';
+        header('Location:'.$URL.'/views/admin/usuarios/index.php');
+        session_start();
+        $_SESSION['msj'] = "Actualizacion de Usuario Exitoso";
     }else{
-        echo'<script type="text/javascript">
-        alert("Fallo al Actualizar");
-        </script>';
+        header('Location:'.$URL.'/views/admin/usuarios/index.php');
+        session_start();
+        $_SESSION['msj'] = "Fallo al Actualizar";
     }
 ?>
