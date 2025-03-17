@@ -212,6 +212,43 @@
               </li>
             </ul>
           </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Libros
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=$URL;?>/views/admin/libros" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado Libros</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=$URL;?>/views/admin/libros/digitales.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado Libros Digitales</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=$URL;?>/views/admin/libros/fisicos.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado Libros Fisicos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=$URL;?>/views/admin/libros/create.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Cargar Libro</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

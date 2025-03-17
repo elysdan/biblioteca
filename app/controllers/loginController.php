@@ -1,6 +1,6 @@
 <?php
 //echo "entro en el controlador";
-//include('../../debug/errores.php');
+include('../../debug/errores.php');
 include('../config/config.php');
 include('../config/conn.php');
 //echo password_hash('qwerty', PASSWORD_DEFAULT);
@@ -11,10 +11,11 @@ try {
 
     $correo = $_POST['correo']; 
     $password = $_POST['contrasena'];
-    $error = header("Location:".$URL."/views/error/loginError.php");
+    //$error = header("Location:".$URL."/views/error/loginError.php");
     //Valida si los campos estan vacios.
     if (empty($correo && $password)) {
-        $error;
+        //$error;
+        die();
         //throw new Exception('No puede dejar campos vacios');
     }
 
@@ -35,20 +36,20 @@ try {
             //die();
         }
 
-        if($contador == "0" || $contador == NULL || $pass != $u['contrasena']){ // Verifica datos existentes
-            header("Location:".$URL."/views/error/loginError.php");
-            //echo "Los datos ingresados no pertenecen a un usuario Activo, por favor verifique nuevamente los datos ingresados";
+        if($contador == "0"){ // Verifica datos existentes
+            //header('Location:'.$URL.'/views/error/loginError.php');
+            echo "Los datos ingresados no pertenecen a un usuario Activo, por favor verifique nuevamente los datos ingresados";
         }else{
             if (password_verify($password, $pass)) {
                 session_start();
                 $_SESSION['sesion_correo'] = $correo;
-                header("Location:".$URL."/views/admin");
+                header('Location:'.$URL.'/views/admin');
                 //echo "Contrasena correcta";
                 //die();
             }else{
                 //die($password . '  ' . $pass);
-                header("Location:".$URL."/views/error/loginError.php");
-                //echo "Contrasena incorrecta";
+                //header("Location:".$URL."/views/error/loginError.php");
+                echo "Contrasena incorrecta";
             }
         }     
 } catch (PDOException $e) {
