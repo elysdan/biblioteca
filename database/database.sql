@@ -43,3 +43,21 @@ CREATE TABLE IF NOT EXISTS tbl_libros
 
     CONSTRAINT tbl_libros_pkey PRIMARY KEY (id)
 );
+
+
+-------------------- TABLA AREAS -------------------
+
+create SEQUENCE IF NOT EXISTS tbl_areas_id_seq
+start with 1
+increment by 1;
+
+CREATE TABLE IF NOT EXISTS tbl_areas
+(
+    id integer NOT NULL DEFAULT nextval('tbl_areas_id_seq'::regclass),
+    codigo text NOT NULL,
+    nombre_area_P text NULL,
+    nombre_area_H text NULL,
+    estado integer NOT NULL,
+
+    CONSTRAINT tbl_areas_pkey PRIMARY KEY (id)
+);
