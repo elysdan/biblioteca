@@ -61,3 +61,52 @@ CREATE TABLE IF NOT EXISTS tbl_areas
 
     CONSTRAINT tbl_areas_pkey PRIMARY KEY (id)
 );
+
+----- insert de ejemplo -------
+INSERT INTO public.tbl_areas
+(id, codigo, nombre_area_p, nombre_area_h, estado)
+VALUES(nextval('tbl_areas_id_seq'::regclass), '001', '', 'Conocimiento', 1);
+
+
+-------------------- TABLA CAMPOS -------------------
+
+create SEQUENCE IF NOT EXISTS tbl_campos_id_seq
+start with 1
+increment by 1;
+
+CREATE TABLE IF NOT EXISTS tbl_campos
+(
+    id integer NOT NULL DEFAULT nextval('tbl_campos_id_seq'::regclass),
+    codigo text NOT NULL,
+    nombre_campo text NULL,
+    estado integer NOT NULL,
+
+    CONSTRAINT tbl_campos_pkey PRIMARY KEY (id)
+);
+----- insert de ejemplo -------
+INSERT INTO public.tbl_campos
+(id, codigo, nombre_campo, estado)
+VALUES(nextval('tbl_campos_id_seq'::regclass), '050', 'Publicaciones seriadas generales', 1);
+
+
+
+-------------------- TABLA EDITORIALES -------------------
+
+create SEQUENCE IF NOT EXISTS tbl_editoriales_id_seq
+start with 1
+increment by 1;
+
+CREATE TABLE IF NOT EXISTS tbl_editoriales
+(
+    id integer NOT NULL DEFAULT nextval('tbl_editoriales_id_seq'::regclass),
+    codigo text NOT NULL,
+    nombre_editorial text NULL,
+    descripcion text NULL,
+    estado integer NOT NULL,
+
+    CONSTRAINT tbl_editoriales_pkey PRIMARY KEY (id)
+);
+----- insert de ejemplo -------
+INSERT INTO public.tbl_editoriales
+(id, codigo, nombre_editorial, estado)
+VALUES(nextval('tbl_editoriales_id_seq'::regclass), '050', 'Publicaciones seriadas generales', 1);

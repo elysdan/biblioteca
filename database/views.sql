@@ -17,3 +17,11 @@ SELECT CASE
         )
     END AS info_completa
 FROM tbl_areas ta;
+
+
+------ QUERY CAMPOS --------
+
+CREATE VIEW vista_campos AS
+
+SELECT CONCAT(codigo,' - ',nombre_campo) AS info_completa
+FROM tbl_campos cp;
