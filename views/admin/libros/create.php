@@ -40,7 +40,19 @@ include('../../../app/config/session.php');
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Codigo" disabled>
+                        <?php
+                        $contador_id = 0;
+                            $query_id = $pdo->prepare("SELECT * FROM tbl_libros");
+                            $query_id->execute();
+                            $ids = $query_id->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($ids as $i){
+                                $contador_id+=1;
+                        ?>
+                        <?php
+                            }
+                            $contador_id+=1;
+                        ?>
+                            <input type="text" value="<?=$contador_id;?>" class="form-control" placeholder="Codigo" disabled>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -53,7 +65,8 @@ include('../../../app/config/session.php');
                             <table>
                                 <tr>
                                     <td>
-                                        <select class="form-control" name="campo" id="campo">
+                                        <select class="form-control" name="campo" id="campo" required>
+                                            <option label="SELECCIONE UN CAMPO"></option>
                                             <?php
                                                 $query_campos = $pdo->prepare("SELECT info_completa FROM vista_campos");
                                                 $query_campos->execute();
@@ -62,9 +75,7 @@ include('../../../app/config/session.php');
                                                     $id = $c['id'];
                                                     $campo = $c['info_completa'];
                                             ?>
-
                                             <option value="<?=$campo;?>"><?=$campo;?></option>
-
                                             <?php
                                                 }
                                             ?>
@@ -85,7 +96,8 @@ include('../../../app/config/session.php');
                             <table>
                                 <tr>
                                     <td>
-                                        <select class="form-control" name="area" id="area">
+                                        <select class="form-control" name="area" id="area" required>
+                                        <option label="SELECCIONE UN AREA" ></option>
                                             <?php
                                                 $query_areas = $pdo->prepare("SELECT info_completa FROM vista_areas");
                                                 $query_areas->execute();
@@ -122,7 +134,8 @@ include('../../../app/config/session.php');
                             <table>
                                 <tr>
                                     <td>
-                                        <select class="form-control" name="editorial" id="editorial">
+                                        <select class="form-control" name="editorial" id="editorial" required>
+                                        <option label="SELECCIONE UNA EDITORIAL" ></option>
                                             <?php
                                                 $query_editoriales = $pdo->prepare("SELECT CONCAT(codigo, ' - ', nombre_editorial) 
                                                 AS info FROM tbl_editoriales");
@@ -149,12 +162,12 @@ include('../../../app/config/session.php');
                         </div>
                     <div class="col-md-3">
                     <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Autor">
+                            <input type="text" class="form-control" placeholder="Autor" required>
                         </div>
                     </div>
                     <div class="col-md-3">
                     <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ciudad">
+                            <input type="text" class="form-control" placeholder="Ciudad" required>
                         </div>
                     </div>
                     <div class="col-md-2">
