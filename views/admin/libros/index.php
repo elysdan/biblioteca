@@ -12,7 +12,7 @@ include('../../../app/config/session.php');
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Listado de libros</h1>
+            <h1 class="m-0">Listado de todos los libros</h1>
 
           <?php
             if (isset($_SESSION['msj'])) { 
@@ -52,15 +52,16 @@ include('../../../app/config/session.php');
                     <th scope="col">Campo</th>
                     <th scope="col">Ciudad</th>
                     <th scope="col">Editorial</th>
-                    <th scope="col">Publicacion</th>
                     <th scope="col">Nro. Edicion</th>
-                    <th scope="col">Paginas</th>
                     <th scope="col">Formato</th>
-                    <th scope="col">Ejemplares</th>
-                    <th scope="col">Observaciones</th>
                     <th scope="col">Cod. Barra</th>
-                    <th scope="col">Estado</th>
                     <th scope="col">Acciones</th>
+
+                    <!-- <th scope="col">Publicacion</th> 
+                         <th scope="col">Observaciones</th>
+                         <th scope="col">Paginas</th>
+                         <th scope="col">Ejemplares</th>
+                         -->
                 </tr>
             </thead>
             <tbody>
@@ -84,10 +85,24 @@ include('../../../app/config/session.php');
                   $ejemplares = $l['ejemplares'];
                   $observaciones = $l['observaciones'];
                   $cod_barra = $l['cod_barra'];
-                  $estado = $l['estado'];
+                  //$estado = $l['estado'];
               ?>
                 <tr>
-                    <td><?=$l['nombre'];?></td>
+                    <td><?=$l['codigo'];?></td>
+                    <td><?=$l['titulo'];?></td>
+                    <td><?=$l['autor'];?></td>
+                    <td><?=$l['area'];?></td>
+                    <td><?=$l['campo'];?></td>
+                    <td><?=$l['ciudad'];?></td>
+                    <td><?=$l['editorial'];?></td>
+                    <td><?=$l['nro_edicion'];?></td>
+                    <td><?=$l['formato'];?></td>
+                    <td><?=$l['cod_barra'];?></td>
+
+                    <!-- <td><?=$l['anio_pub'];?></td>
+                     <td><?=$l['paginas'];?></td> 
+                     <td><?=$l['observaciones'];?></td>
+                     <td><?=$l['ejemplares'];?></td>-->
 
                     <td>
                       <a href="<?=$URL?>/views/admin/libros/show.php?id=<?=$id?>" class="btn btn-success">Ver</a>
