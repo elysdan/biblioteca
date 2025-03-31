@@ -24,7 +24,7 @@ increment by 1;
 
 CREATE TABLE IF NOT EXISTS tbl_libros
 (
-    id integer NOT NULL DEFAULT nextval('tbl_usuarios_id_seq'::regclass),
+    id integer NOT NULL DEFAULT nextval('tbl_libros_id_seq'::regclass),
     codigo text NOT NULL,
     titulo text NOT NULL,
     autor text NOT NULL,
