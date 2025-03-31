@@ -42,10 +42,13 @@ $sentencia->bindParam(':cod_barra',$cod_barra);
 $sentencia->bindParam('estado',$estado);
 
 if($sentencia->execute()){
-echo 'success';
-//header('Location:' .$URL.'/');
+    header('Location:'.$URL.'/views/admin/libros/create.php');
+    session_start();
+    $_SESSION['msj'] = "Registro del Libro ".$titulo." Exitoso";
 }else{
-echo 'error al registrar a la base de datos';
-}
+    header('Location:'.$URL.'/views/admin/libros/create.php');
+    session_start();
+    $_SESSION['msj'] = "Error en la conexion";
+};
 
 ?>
