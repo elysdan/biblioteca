@@ -34,7 +34,7 @@ include('../../../app/config/session.php');
         <div class="card">
             <h5 class="card-header">Ingrese la informacion solicitada</h5>
             <div class="card-body">
-              <form action="<?=$URL?>/app/controllers/createUserController.php" method="post">
+              <form action="<?=$URL?>/app/controllers/createBookController.php" method="post">
 <!--Fila 1 -->
 
                 <div class="row">
@@ -53,11 +53,12 @@ include('../../../app/config/session.php');
                             $contador_id+=1;
                         ?>
                             <input type="text" value="<?=$contador_id;?>" class="form-control" placeholder="Codigo" disabled>
+                            <input type="text" name="codigo" value="<?=$contador_id;?>" class="form-control" placeholder="Codigo" hidden>
                         </div>
                     </div>
                     <div class="col-md-3">
                     <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Titulo">
+                            <input type="text" name="titulo" class="form-control" placeholder="Titulo" required>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -162,22 +163,22 @@ include('../../../app/config/session.php');
                         </div>
                     <div class="col-md-3">
                     <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Autor" required>
+                            <input type="text" name="autor" class="form-control" placeholder="Autor" required>
                         </div>
                     </div>
                     <div class="col-md-3">
                     <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ciudad" required>
+                            <input type="text" name="ciudad" class="form-control" placeholder="Ciudad" required>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Año de publicacion">
+                            <input type="number" name="anio_pub" class="form-control" placeholder="Año de publicacion">
                         </div>
                     </div>
                     <div class="col-md-1">
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="NºPag.">
+                            <input type="number" name="paginas" class="form-control" placeholder="NºPag.">
                         </div>
                     </div>
                 </div>
@@ -188,27 +189,27 @@ include('../../../app/config/session.php');
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Nº Edicion">
+                            <input type="number" name="nro_edicion" class="form-control" placeholder="Nº Edicion">
                         </div>
                     </div>
                     <div class="col-md-3">
                     <div class="form-group">
-                        <select name="" id="" class="form-control">
+                        <select name="formato" id="formato" class="form-control">
                             <option value="DIGITAL">DIGITAL</option>
                             <option value="FISICO">FISICO</option>
-                            <option value="AMBOS">AMBOS</option>
+                            <option value="AMBOS" hidden>AMBOS</option>
                         </select>
                     </div>
                     </div>
 
                     <div class="col-md-3">
                     <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Ejemplares">
+                            <input type="number" name="ejemplares" class="form-control" placeholder="Ejemplares">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Cod. Barra">
+                            <input type="number" name="cod_barra" class="form-control" placeholder="Cod. Barra">
                         </div>
                     </div>
                 </div>
@@ -218,12 +219,12 @@ include('../../../app/config/session.php');
                 <div class="row">
                     <div class="col-md-8">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Observaciones">
+                            <input type="text" name="observaciones" class="form-control" placeholder="Observaciones">
                         </div>
                     </div>
                     <div class="col-md-4">
                     <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Estado">
+                            <input type="text" name="estado" class="form-control" placeholder="Estado" hidden>
                         </div>
                     </div>
                 </div>
