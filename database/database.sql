@@ -11,6 +11,8 @@ CREATE TABLE IF NOT EXISTS tbl_usuarios
     contrasena text not NULL,
     estado integer,
     fecha_nac date,
+    imagen text NULL,
+
     CONSTRAINT tbl_usuarios_pkey PRIMARY KEY (id)
 );
 
@@ -40,6 +42,7 @@ CREATE TABLE IF NOT EXISTS tbl_libros
     observaciones text NOT NULL,
     cod_barra text NOT NULL,
     estado integer NOT NULL,
+    imagen text NULL,
 
     CONSTRAINT tbl_libros_pkey PRIMARY KEY (id)
 );

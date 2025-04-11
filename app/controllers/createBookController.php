@@ -3,7 +3,6 @@ include('../../debug/errores.php');
 include('../config/config.php');
 include('../config/conn.php');
 
-//$id = $_POST['id'];
 $codigo = $_POST['codigo'];
 $titulo = $_POST['titulo'];
 $autor = $_POST['autor'];
@@ -19,10 +18,22 @@ $ejemplares = $_POST['ejemplares'];
 $observaciones = $_POST['observaciones'];
 $cod_barra = $_POST['cod_barra'];
 $estado = 1;
+$imagen = $_FILES['imagen']['tmp_name'];
+$nombreImagen = $_FILES['imagen']['name'];
+$formatoImagen = strtolower(pathinfo($nombreImagen, PATHINFO_EXTENSION));
+$directorio_digital = $URL."/views/admin/libros/portadas_digitales/".$nombreImagen.$formatoImagen;
+$directorio_fisico = $URL."/views/admin/libros/portadas_fisicos/".$nombreImagen.$formatoImagen;
 
+$text_area = $_POST['area'];
+$arrayTA = explode(" ", $text_area);
+$let_extraida_TA = "";
+foreach($arrayTA as $letra){
+    $array_letra = str_split($letra,1);
+    $let_extraida_TA = $let_extraida_TA.$array_letra['0'];
+}
 $sentencia = $pdo->prepare('INSERT INTO tbl_libros
-(codigo,titulo,autor,area,campo,ciudad,editorial,anio_pub,nro_edicion,paginas,formato,ejemplares,observaciones,cod_barra, estado)
-VALUES ( :codigo,:titulo,:autor,:area,:campo,:ciudad,:editorial,:anio_pub,:nro_edicion,:paginas,:formato,:ejemplares,:observaciones,:cod_barra,:estado)');
+(codigo,titulo,autor,area,campo,ciudad,editorial,anio_pub,nro_edicion,paginas,formato,ejemplares,observaciones,cod_barra, estado, imagen)
+VALUES ( :codigo,:titulo,:autor,:area,:campo,:ciudad,:editorial,:anio_pub,:nro_edicion,:paginas,:formato,:ejemplares,:observaciones,:cod_barra,:estado,:imagen)');
 
 //$sentencia->bindParam(':id',$id);
 $sentencia->bindParam(':codigo',$codigo);
@@ -41,14 +52,29 @@ $sentencia->bindParam(':observaciones',$observaciones);
 $sentencia->bindParam(':cod_barra',$cod_barra);
 $sentencia->bindParam('estado',$estado);
 
-if($sentencia->execute()){
-    header('Location:'.$URL.'/views/admin/libros/create.php');
-    session_start();
-    $_SESSION['msj'] = "Registro del Libro ".$titulo." Exitoso";
-}else{
-    header('Location:'.$URL.'/views/admin/libros/create.php');
-    session_start();
-    $_SESSION['msj'] = "Error en la conexion";
-};
+if ($formato == "DIGITAL") {
+    $sentencia->bindParam(':imagen',$directorio_digital);
+} else {
+    $sentencia->bindParam(':imagen',$directorio_fisico);
+}
+
+    if ($formatoImagen = 'jpg' || $formatoImagen = 'jpeg' || $formatoImagen = 'png') {
+
+        if($sentencia->execute()){
+            
+            header('Location:'.$URL.'/views/admin/libros/create.php');
+            session_start();
+            $_SESSION['msj'] = "Registro del Libro ".$titulo." Exitoso";
+        } elseif (false) {
+            header('Location:'.$URL.'/views/admin/libros/create.php');
+            session_start();
+            $_SESSION['msj'] = "Formato de archivo no permitido, debe ser JPG, JPEG o PNG";
+        } 
+    } else{
+        header('Location:'.$URL.'/views/admin/libros/create.php');
+        session_start();
+        $_SESSION['msj'] = "Error en la conexion";
+    }
+
 
 ?>

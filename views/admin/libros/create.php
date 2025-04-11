@@ -5,7 +5,18 @@ include('../../../app/config/config.php');
 include('../../../app/config/conn.php');
 include('../../../app/config/session.php');
 ?>
-
+<style>
+    .file-select {
+    position: relative;
+    display: inline-block;
+    }
+    .custom-button {
+        /* Estilos del botón personalizado */
+    }
+    .filename {
+        /* Estilos para mostrar el nombre del archivo */
+    }
+</style>
 <?=include('../../../layout/admin/primero.php');?>
   <div class="content-wrapper">
     <div class="content-header">
@@ -34,7 +45,7 @@ include('../../../app/config/session.php');
         <div class="card">
             <h5 class="card-header">Ingrese la informacion solicitada</h5>
             <div class="card-body">
-              <form action="<?=$URL?>/app/controllers/createBookController.php" method="post">
+              <form action="<?=$URL?>/app/controllers/createBookController.php" method="post" enctype="multipart/form-data">
 <!--Fila 1 -->
 
                 <div class="row">
@@ -222,10 +233,17 @@ include('../../../app/config/session.php');
                             <input type="text" name="observaciones" class="form-control" placeholder="Observaciones">
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-1">
                     <div class="form-group">
                             <input type="text" name="estado" class="form-control" placeholder="Estado" hidden>
                         </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="file-select">
+                            <input type="file" id="file-input" name="imagen" style="opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" />
+                            <button type="button" class="btn btn-success">Subir Portada</button>
+                            <span class="filename"></span>
+                        </div>                    
                     </div>
                 </div>
                 
@@ -234,7 +252,7 @@ include('../../../app/config/session.php');
                   <div class="col-md-6">
                     <a href="<?=$URL?>/views/admin" class="btn btn-default">Cancelar</a>
 
-                    <button type="submit" onclick="return confirm('¿Todos los datos son correctos?');" class="btn btn-primary">Cargar</button>
+                    <button type="submit" name="cargar" onclick="return confirm('¿Todos los datos son correctos?');" class="btn btn-primary">Cargar</button>
                   </div>
                   </div>
                 </div>
@@ -440,3 +458,19 @@ include('../../../app/config/session.php');
     </div>
   </div>
 </div>
+
+<script>
+    const fileInput = document.getElementById('file-input');
+    const customButton = document.querySelector('.custom-button');
+    const filenameDisplay = document.querySelector('.filename');
+
+    customButton.addEventListener('click', () => {
+        fileInput.click();
+    });
+
+    fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+            filenameDisplay.textContent = fileInput.files[0].name;
+        }
+    });
+</script>

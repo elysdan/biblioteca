@@ -26,7 +26,7 @@ include('../app/config/conn.php');
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="../../index2.html" class="h1"><b>Biblioteca</b>El&Vic</a>
+                <a href="../../index2.html" class="h1"><b>Biblioteca</b></a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Inicia sesion</p>
