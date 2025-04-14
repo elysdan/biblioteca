@@ -240,7 +240,8 @@ include('../../../app/config/session.php');
                     </div>
                     <div class="col-md-3">
                         <div class="file-select">
-                            <input type="file" id="file-input" name="imagen" style="opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" />
+                            <input type="file" id="file-input" name="imagen" style="opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                            required accept="image/png, image/jpeg, image/jpg"/>
                             <button type="button" class="btn btn-success">Subir Portada</button>
                             <span class="filename"></span>
                         </div>                    
