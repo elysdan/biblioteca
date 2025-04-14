@@ -1,6 +1,6 @@
 <?php
-//echo error_reporting(E_ALL);
-//echo ini_set("display_errors", 1);
+echo error_reporting(E_ALL);
+echo ini_set("display_errors", 1);
 include('../../../app/config/config.php');
 include('../../../app/config/conn.php');
 include('../../../app/config/session.php');
@@ -30,6 +30,7 @@ $query_libros = $pdo->prepare("SELECT * FROM tbl_libros WHERE id = '$id_get'");
                     $observaciones = $l['observaciones'];
                     $cod_barra = $l['cod_barra'];
                     $estado = $l['estado'];
+                    $imageList = $l['imagen'];
                 }
 
 ?>
@@ -61,6 +62,11 @@ $query_libros = $pdo->prepare("SELECT * FROM tbl_libros WHERE id = '$id_get'");
 
         <div class="content-wrapper">
             <div class="content-header">
+            <?php if (!empty($imageList)): ?>
+                        <img src="<?php echo $imageList; ?>" alt="Imagen cargada" onclick="openModal('<?php echo $imageList; ?>')">
+                <?php else: ?>
+                    <p>No hay imágenes cargadas todavía.</p>
+                <?php endif; ?>
             <div class="container-fluid">
                 <div class="container mt-3">
                 <h2 class="mb-3">Informacion del Libro</h2>
@@ -132,5 +138,31 @@ $query_libros = $pdo->prepare("SELECT * FROM tbl_libros WHERE id = '$id_get'");
                 </table>
             </div>
             </div>
-    
+            <div id="myModal" class="modal">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="imgModal">
+    </div>
+
+    <script>
+        // Funciones para el Modal
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("imgModal");
+
+        function openModal(imgSrc) {
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Cerrar modal si se hace clic fuera de la imagen
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
   <?=include('../../../layout/admin/segundo.php');?>

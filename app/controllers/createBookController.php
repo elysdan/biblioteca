@@ -1,5 +1,5 @@
 <?php
-include('../../debug/errores.php');
+//include('../../debug/errores.php');
 include('../config/config.php');
 include('../config/conn.php');
 
@@ -18,16 +18,7 @@ $ejemplares = $_POST['ejemplares'];
 $observaciones = $_POST['observaciones'];
 $cod_barra = $_POST['cod_barra'];
 $estado = 1;
-
-
-
-
-
-
-
-
-
-$directorio = "uploads/"; // Directorio donde se guardarán las imágenes
+$directorio = $URL."/app/controllers/uploads/"; // Directorio donde se guardarán las imágenes
 $allowed_types = ['jpg', 'jpeg', 'png']; // Tipos de archivo permitidos
 $max_file_size = 5 * 1024 * 1024; // Tamaño máximo permitido en bytes (ej: 5MB)
 $message = ""; 
@@ -87,12 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["imagen"])) {
 
 }
 
-//$imagen = $_FILES['imagen']['tmp_name'];
-//$nombreImagen = $_FILES['imagen']['name'];
-//$formatoImagen = strtolower(pathinfo($nombreImagen, PATHINFO_EXTENSION));
-//$directorio_digital = $URL."/public/portadas_digitales/".$nombreImagen;
-//$directorio_fisico = $URL."/public/portadas_fisicos/".$nombreImagen;
-
 $text_area = $_POST['area'];
 $arrayTA = explode(" ", $text_area);
 $let_extraida_TA = "";
@@ -122,16 +107,6 @@ $sentencia->bindParam(':cod_barra',$cod_barra);
 $sentencia->bindParam('estado',$estado);
 $sentencia->bindParam(':imagen',$target_file_path);
 
-/*if ($formato == "DIGITAL") {
-    $sentencia->bindParam(':imagen',$directorio_digital);
-    
-} else {
-    $sentencia->bindParam(':imagen',$directorio_fisico);
-    move_uploaded_file(':imagen',$directorio_fisico);
-}*/
-
-
-
         if($sentencia->execute()){         
             header('Location:'.$URL.'/views/admin/libros/create.php');
             session_start();
@@ -142,5 +117,20 @@ $sentencia->bindParam(':imagen',$target_file_path);
         $_SESSION['msj'] = "Error en la conexion";
     }
 
+    function getUploadedImages($dir) {
+        $images = [];
+        if (is_dir($dir)) {
+            // Usar glob para buscar patrones de archivo de imagen
+            $files = glob($dir . "*.{jpg,jpeg,png}", GLOB_BRACE);
+            if ($files) {
+                foreach ($files as $file) {
+                    $images[] = $file;
+                }
+            }
+        }
+        return $images;
+    }
+
+    $imageList = getUploadedImages($directorio);
 
 ?>
